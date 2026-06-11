@@ -11,7 +11,6 @@ class StockCompanyService(BaseService):
     table_name = "ods_stock_company"
 
     @query_method(
-        name="get_company_by_code",
         description="获取指定股票的公司基础信息",
         params=[
             QueryParam(
@@ -63,7 +62,6 @@ class StockCompanyService(BaseService):
         return None
 
     @query_method(
-        name="get_companies_by_exchange",
         description="获取指定交易所的所有上市公司",
         params=[
             QueryParam(
@@ -112,7 +110,6 @@ class StockCompanyService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_companies_by_province",
         description="获取指定省份的所有上市公司",
         params=[
             QueryParam(
@@ -157,7 +154,6 @@ class StockCompanyService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="search_companies",
         description="搜索公司（支持公司名称模糊匹配）",
         params=[
             QueryParam(
@@ -201,7 +197,6 @@ class StockCompanyService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_company_statistics",
         description="获取上市公司统计信息（按交易所、省份分组）",
         params=[],
     )

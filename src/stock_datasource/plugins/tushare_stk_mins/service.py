@@ -11,7 +11,6 @@ class StkMinsService(BaseService):
     table_name = "ods_stk_mins"
 
     @query_method(
-        name="get_mins_by_code",
         description="获取指定股票的分钟K线数据",
         params=[
             QueryParam(
@@ -88,7 +87,6 @@ class StkMinsService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_latest_mins",
         description="获取指定股票最新的N条分钟数据",
         params=[
             QueryParam(
@@ -138,7 +136,6 @@ class StkMinsService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_mins_by_date",
         description="获取指定日期的分钟数据",
         params=[
             QueryParam(
@@ -195,7 +192,6 @@ class StkMinsService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_vwap",
         description="计算成交量加权平均价(VWAP)",
         params=[
             QueryParam(
@@ -269,7 +265,6 @@ class StkMinsService(BaseService):
         return None
 
     @query_method(
-        name="get_data_summary",
         description="获取分钟数据统计摘要",
         params=[
             QueryParam(

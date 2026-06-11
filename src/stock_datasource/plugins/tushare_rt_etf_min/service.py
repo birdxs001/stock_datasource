@@ -11,7 +11,6 @@ class RtEtfMinService(BaseService):
     table_name = "ods_rt_etf_min"
 
     @query_method(
-        name="get_latest_etf_minute_kline",
         description="获取指定ETF的最新分钟K线数据",
         params=[
             QueryParam(
@@ -57,7 +56,6 @@ class RtEtfMinService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_etf_minute_kline_by_date",
         description="获取指定ETF某日的分钟K线数据",
         params=[
             QueryParam(
@@ -103,7 +101,6 @@ class RtEtfMinService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_etf_minute_snapshot",
         description="获取多只ETF最新一根分钟K线快照",
         params=[
             QueryParam(
@@ -148,7 +145,6 @@ class RtEtfMinService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_etf_minute_stats",
         description="获取ETF分钟K线数据统计",
         params=[
             QueryParam(name="freq", type="str", required=False, description="K线频率")

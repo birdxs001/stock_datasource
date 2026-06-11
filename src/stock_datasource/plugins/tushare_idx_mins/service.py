@@ -11,7 +11,6 @@ class IdxMinsService(BaseService):
     table_name = "ods_min_kline_index"
 
     @query_method(
-        name="get_idx_mins_by_code",
         description="获取指定指数的分钟K线数据",
         params=[
             QueryParam(
@@ -77,7 +76,6 @@ class IdxMinsService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_latest_idx_mins",
         description="获取指定指数最新的N条分钟数据",
         params=[
             QueryParam(
@@ -118,7 +116,6 @@ class IdxMinsService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_idx_mins_by_date",
         description="获取指定日期的指数分钟数据",
         params=[
             QueryParam(
@@ -165,7 +162,6 @@ class IdxMinsService(BaseService):
         return [dict(zip(columns, row)) for row in result]
 
     @query_method(
-        name="get_idx_data_summary",
         description="获取指数分钟数据统计摘要",
         params=[
             QueryParam(
